@@ -8,7 +8,7 @@ html { box-sizing: border-box; font-size: 14px; font-family: sans-serif; overflo
 
 body { color: #e8e6e6; min-height: 100%; padding: 0; margin: 0; }
 
-a { text-decoration: none; color: #e84b43; }
+a { text-decoration: none; color: #46bfba; }
 
 .main { display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0 10%; }
 
@@ -34,7 +34,7 @@ a { text-decoration: none; color: #e84b43; }
 
 @media (max-width: 479px) { .spacer._70 { display: none; height: 70px; } }
 
-.circle01 { position: static; display: inline-block; width: 10px; height: 10px; margin-top: 0px; margin-right: 10px; border-radius: 10px; background-color: #e84b43; }
+.circle01 { position: static; display: inline-block; width: 10px; height: 10px; margin-top: 0px; margin-right: 10px; border-radius: 10px; background-color: #46bfba; }
 
 .c2 { background: #c9cbc4; }
 
@@ -48,7 +48,7 @@ h1 { position: static; margin-top: 0px; margin-bottom: 10px; -ms-flex-item-align
 
 .description a { transition: all 200ms ease; }
 
-.description a:hover { color: #e84b43; opacity: 0.5; text-decoration: underline; }
+.description a:hover { color: #46bfba; opacity: 0.5; text-decoration: underline; }
 
 @media screen and (max-width: 479px) { .me { grid-column-end: 5; grid-column-start: 1; grid-row-start: 1; grid-row-end: 2; padding-left: 0px; } }
 
@@ -114,7 +114,7 @@ h2 { margin-top: auto; font-size: 14px; line-height: 20px; font-weight: 400; mar
 
 .social-links a { position: relative; height: 20px; margin-right: 15px; -webkit-transform-origin: 0% 0%; -ms-transform-origin: 0% 0%; transform-origin: 0% 0%; color: #333333; }
 
-.social-links a:hover { color: #e84b43; font-style: normal; text-decoration: none; }
+.social-links a:hover { color: #46bfba; font-style: normal; text-decoration: none; }
 
 @media (max-width: 479px) { .social-links a { margin-bottom: 10px; } }
 
@@ -122,9 +122,9 @@ h2 { margin-top: auto; font-size: 14px; line-height: 20px; font-weight: 400; mar
 
 .social-links .social-link:hover .social-link-name { transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; }
 
-.area-link-underline, .social-link-underline { position: absolute; left: 0px; top: auto; bottom: 0px; width: 0%; height: 1px; background: #e84b43; opacity: .5; }
+.area-link-underline, .social-link-underline { position: absolute; left: 0px; top: auto; bottom: 0px; width: 0%; height: 1px; background: #46bfba; opacity: .5; }
 
-.area-link:hover .area-link-underline, .social-link:hover .social-link-underline { width: 100%; background: #e84b43; opacity: 1; }
+.area-link:hover .area-link-underline, .social-link:hover .social-link-underline { width: 100%; background: #46bfba; opacity: 1; }
 
 .area-link-underline, .social-link-underline, .social-link-name { transition: all 200ms ease; }
 
