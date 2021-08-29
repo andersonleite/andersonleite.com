@@ -20,5 +20,5 @@ JEKYLL_ENV=production bundle exec jekyll build
 
 Production deploy
 git add .
-git commit -m "New release"
+git commit -m "update"
 git push origin master
