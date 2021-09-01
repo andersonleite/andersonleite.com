@@ -1,19 +1,15 @@
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
-import Box from '../components/Box'
+import dynamic from 'next/dynamic'
+import styles from '../styles/Lab.module.scss'
 
-export default function BoxesPage() {
+const SceneWithoutSSR = dynamic(
+  () => import('../components/Scene'),
+  { ssr: false }
+)
+
+export default function LabPage() {
   return (
-    <>
-      <Canvas camera={{ position: [0, 0, 35] }}>
-        <ambientLight intensity={2} />
-        <pointLight position={[40, 40, 40]} />
-        <Box position={[10, 0, 0]} />
-        <Box position={[-10, 0, 0]} />
-        <Box position={[0, 10, 0]} />
-        <Box position={[0, -10, 0]} />
-        <OrbitControls />
-      </Canvas>
-    </>
+    <div className={styles.title}>
+      <SceneWithoutSSR />
+    </div>
   )
 }
