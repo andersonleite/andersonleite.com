@@ -4,6 +4,9 @@ import React, { Suspense, useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { Fog } from 'three'
 
+import { useGLTF } from '@react-three/drei'
+
+
 export default function Haunted() {
   return (
     <>
