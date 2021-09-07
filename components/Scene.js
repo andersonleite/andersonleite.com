@@ -3,8 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from '@react-three/drei'
 import { useControls } from "leva"
 
-// export default function Scene() {
-const Scene =(props) =>{  
+const Scene =(props) =>{
 
   const { visible } = useControls('Axes Helper', { visible: true })
   const { size } = useControls('Axes Helper', { size: { value: 1, min: 0, max: 10, step: 1 } })

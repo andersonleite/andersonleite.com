@@ -2,10 +2,6 @@ import { useControls } from 'leva'
 import { useTexture } from '@react-three/drei'
 import React, { Suspense, useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
-import { Fog } from 'three'
-
-import { useGLTF } from '@react-three/drei'
-
 
 export default function Haunted() {
   return (
@@ -46,7 +42,6 @@ export default function Haunted() {
 
 export function Floor() {
 
-  // Load keyed textures
   const textures = useTexture({
     map: '/textures/grass/color.jpg',
     aoMap: '/textures/grass/ambientOcclusion.jpg',
@@ -64,10 +59,6 @@ export function Floor() {
 
 export function Door() {
 
-
-
-
-  // Load keyed textures
   const textures = useTexture({
     map: '/textures/door/color.jpg',
     alphaMap: '/textures/door/alpha.jpg',
@@ -91,7 +82,6 @@ export function Door() {
 export function Walls() {
   const { y } = useControls('Walls', { y: { value: 1.25, min: 0, max: 10, step: .25 } })
 
-  // Load keyed textures
   const textures = useTexture({
     map: '/textures/bricks/color.jpg',
     aoMap: '/textures/bricks/ambientOcclusion.jpg',
@@ -152,12 +142,10 @@ function Grave() {
   )
 }
 
-
 function Ghosts() {
   const ghost1 = useRef()
   const ghost2 = useRef()
   const ghost3 = useRef()
-
 
   useFrame((state, delta) => {
     // This function runs 60 times/second, it binds this component to the render-loop.
