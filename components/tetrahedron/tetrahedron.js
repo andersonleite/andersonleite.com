@@ -1,6 +1,6 @@
-import { DoubleSide, FlatShading } from "three"
-import { useFrame } from '@react-three/fiber'
-import { useRef } from 'react'
+import { DoubleSide } from "three"
+import { useRef, useEffect } from 'react'
+import { useFrame } from "@react-three/fiber";
 
 export default function Tetrahedron() {
   const skelet = useRef()
@@ -15,43 +15,42 @@ export default function Tetrahedron() {
 
   return (
     <>
-      <Particles />
       <mesh scale={[16, 16, 16]} ref={planet}>
         <icosahedronGeometry args={[7, 1]} />
-        <meshPhongMaterial color="#ffffff" args={[{ shading: FlatShading }]} />
+        <meshPhongMaterial color="#ffffff" args={[{ flatShading: true }]} />
       </mesh>
       <mesh scale={[10, 10, 10]} ref={skelet}>
         <icosahedronGeometry args={[15, 1]} />
         <meshPhongMaterial color="#ffffff" wireframe={true} args={[{ side: DoubleSide }]} />
       </mesh>
+      <Particles />
     </>
   )
 }
 
 function Particles() {
-  const group = useRef()
+  const particles = useRef()
 
-  let particles = [];
-  for (let i = 0; i < 1000; i++) {
+  useEffect(() => {
+    particles.current.children.forEach(particle => {
+      particle.position.normalize()
+      particle.position.multiplyScalar(90 + (Math.random() * 700))
+    })
+  }, [])
 
-    mesh.position.set(1,2,3).normalize();
-    mesh.position.multiplyScalar(123)
-
-    particles.push(
-      <mesh
-        position-multiply-scalar={[90 + (Math.random() * 700)]}
-        position={[Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5]} key={i}>
-        <tetrahedronGeometry
-          rotation={[Math.random() * 2, Math.random() * 2, Math.random() * 2]}
-          args={[2, 0]} />
-        <meshPhongMaterial color="#ffffff" args={[{ shading: FlatShading }]} />
-      </mesh>
-    )
-  }
+  useFrame(() => {
+    particles.current.rotation.x += 0.0000;
+    particles.current.rotation.y -= 0.0040;
+  })
 
   return (
-    <group ref={group} dispose={null}>
-      {particles}
+    <group ref={particles}>
+      {Array(1000).fill().map((item, idx) => (
+        <mesh key={idx} position={[Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5]} rotation={[Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5]}>
+          <tetrahedronGeometry args={[2, 0]} />
+          <meshPhongMaterial color="#ffffff" side={DoubleSide} />
+        </mesh>
+      ))}
     </group>
   )
 }

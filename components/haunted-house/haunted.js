@@ -118,7 +118,6 @@ export function Bush(props) {
 }
 
 function Grave() {
-  const group = useRef()
 
   let graves = [];
   for (let i = 0; i < 50; i++) {
@@ -136,7 +135,7 @@ function Grave() {
   }
 
   return (
-    <group ref={group} dispose={null}>
+    <group dispose={null}>
       {graves}
     </group>
   )
