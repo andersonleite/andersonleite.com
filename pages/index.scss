@@ -140,25 +140,9 @@ a {
 }
 
 h1 {
-  position: static;
-  margin-top: 0px;
-  margin-bottom: 10px;
-  //-webkit-align-self: start;
-  -ms-flex-item-align: start;
-  -ms-grid-row-align: start;
-  align-self: start;
-  color: $grey_dark;
-  font-size: 18px;
-  line-height: 30px;
-  font-weight: 400;
+  line-height: 25px;
 }
 
-@media (max-width: 991px) {
-  h1 {
-    font-size: 16px;
-    line-height: 26px;
-  }
-}
 .description {
   color: $grey_dark;
   font-size: 17px;
@@ -168,14 +152,14 @@ h1 {
   grid-row-start: 1;
   grid-row-end: 2;
   animation: .6s ease-in-out 0s 1 description;
+}
 
-  a{
-    transition: all 200ms ease;
-    &:hover{
-      color: $green;
-      opacity: 0.5;
-      text-decoration: underline;
-    }
+a{
+  transition: all 200ms ease;
+  &:hover{
+    color: $green;
+    opacity: 0.8;
+    text-decoration: underline;
   }
 }
 

@@ -13,3 +13,28 @@
   background: linear-gradient(to bottom,  #46bfba 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#46bfba', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 }
+
+.info {
+  top: 20px;
+  color: white;
+  font-family: monospace;
+  font-size: 14px;
+  right: 20px;
+  text-align: right;
+  position: fixed;
+
+  a {
+    font-size: 12px;
+    color: #000;
+  }
+
+  @media only screen and (min-width: 700px) {
+    bottom: 40px;
+    right: 40px;
+    top: initial;
+
+    a {
+      color: #46bfba;
+    }
+  }
+}

@@ -9,10 +9,16 @@ const SceneWithoutSSR = dynamic(
 
 export default function LabPage() {
   return (
-    <div className={styles.tetrahedron}>
-      <SceneWithoutSSR z={400}>
-        <Tetrahedron />
-      </SceneWithoutSSR>
-    </div>
+    <>
+      <div className={styles.tetrahedron}>
+        <SceneWithoutSSR z={400}>
+          <Tetrahedron />
+        </SceneWithoutSSR>
+      </div>
+      <div className={styles.info}>
+        <h1>Anderson Leite</h1>
+        <a target="_blank" href="https://www.linkedin.com/in/leiteanderson/">LinkedIn</a>
+      </div>
+    </>
   )
 }
