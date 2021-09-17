@@ -9,7 +9,7 @@ const SceneWithoutSSR = dynamic(
 
 export default function LabPage() {
   return (
-    <div className={styles.title}>
+    <div className={styles.full}>
       <SceneWithoutSSR z={3}>
         <Cube />
       </SceneWithoutSSR>
