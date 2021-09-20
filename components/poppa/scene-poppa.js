@@ -11,9 +11,10 @@ const Scene =(props) =>{
 
     <Canvas
       pixelRatio={window.devicePixelRatio}
-      camera={{ position: [props.x || 0, props.y || 0, props.z || 3] }
-      }>
+      camera={{ position: [props.x || 0, props.y || 0, props.z || 3] }}>
       <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
+      <ambientLight color={'#999999'}/>
+      <directionalLight color={'#ffffff'} intensity={1} position={[1, 0, 0]} />
       {props.children}
       <axesHelper args={[size]} visible={visible} />
     </Canvas >
