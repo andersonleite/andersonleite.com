@@ -22,7 +22,8 @@ export default function Haunted() {
         position={[0, 2.2, 2.7]}
       />
 
-      <fog args={['#262837', 1, 15]} />
+      {/* <fog args={['#262837', 1, 15]} /> */}
+      <fog attach="fog" args={['#d0d0d0', 5, 10]} />nvm list
 
       <Suspense fallback={null}>
         <Door />

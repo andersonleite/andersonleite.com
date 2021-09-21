@@ -1,4 +1,289 @@
-.container {
-  background: #000000;
-  height: 100vh;
+$bg: #1A1A1A;
+$pink: #F3B5A8;
+$grey: #6B504A;
+$black: #0E0E0E;
+$orange: #F04F23;
+$gbModal: #1D1D1D;
+
+@font-face {
+  font-family: 'Woodland';
+  src: url('/fonts/PPWoodland-Regular.woff2') format('woff2'),
+  url('/fonts/PPWoodland-Regular.woff') format('woff'),
+  url('/fonts/PPWoodland-Regular.ttf') format('truetype');
 }
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  color: #fff;
+  font-family: 'Woodland', sans-serif;
+
+  a {
+    color: $pink;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  p {
+    color: $orange;
+  }
+}
+
+@media (min-width: 1180px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 25% 1fr 25%;
+    grid-gap: 20px;
+  }
+  // .grid > div:nth-of-type(2) {
+  //   // order: 2;
+  // }
+
+  .grid > div:nth-of-type(3) {
+    order: 1;
+  }
+
+  .grid > div:nth-of-type(4) {
+    order: 3;
+  }
+}
+
+.canvas {
+  order: 2;
+  flex: 1;
+  height: 100%;
+}
+
+.overlay {
+  position: relative;
+  order: 1;
+  flex: 1;
+  pointer-events: none;
+}
+
+
+$TIMING: .4s;
+$TRANSITION: linear;
+
+.poppa-container-mobile{
+  display: none;
+}
+
+.poppa-container{
+  opacity: 0;
+  transition: opacity .4s cubic-bezier(0.7, 0.9, 0.4, 1.2) .2s;
+  &.loaded{
+    opacity: 1;
+  }
+
+  margin: 0 auto;
+
+  &:hover > .logo{
+    will-change: transform;
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+  }
+
+  .logo{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+
+    transition: all $TIMING $TRANSITION;
+
+  }
+
+  width: 100%;
+  height: 100vh;
+  position: relative
+}
+.poppa {
+  border-radius: 50%;
+  background: $orange;
+  width: 400px;
+  height: 350px;
+}
+
+.poppa-name{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  .poppa-letter{
+    margin: 50px 0;
+    box-sizing: border-box;
+
+    will-change: transform;
+    transition: transform $TIMING $TRANSITION;
+    position: relative;
+    z-index: 2;
+    img {
+      height: 80px;
+    }
+  }
+
+}
+
+@media (max-width: 1180px){
+ .poppa-container-mobile{
+   display: block;
+   text-align: center;
+   padding-top: 40px;
+   img {
+     width: 80%;
+     max-width: 640px;
+   }
+ }
+ .poppa-container{
+   display: none;
+ }
+}
+
+
+@media (max-width: 1180px) {
+  .intro{
+    padding-top: 0px;
+    font-size: 36px;
+  }
+  .poppa-container{
+    height: initial;
+    text-align: center;
+    .logo {
+      margin-top: 80px;
+      width: 80%;
+    }
+  }
+
+  .poppa-name{
+    height: initial;
+    .poppa-letter{
+      transition: transform 10s $TRANSITION;
+      margin: 7% 0;
+      img {
+        height: 40px;
+      }
+    }
+  }
+}
+
+
+
+
+// // letters anim
+// // ============================================
+// .poppa-name {
+//   .div {
+//     display: inline-block;
+//     position: relative;
+//     padding: .5em .2em;
+//     will-change: transform;
+//   }
+// }
+
+.intro {
+  padding: 40px;
+  text-transform: uppercase;
+  font-size: 24px;
+  animation: 0.6s ease-in-out 0s 1 normal none running intro;
+
+  p{
+    padding-bottom: 40px;
+  }
+}
+
+@keyframes intro {
+  0% {
+    opacity: 0;
+    transform: translateY(20px)
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px)
+  }
+}
+
+@keyframes intro {
+  0% {
+    opacity: 0;
+    transform: translateY(40px)
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px)
+  }
+}
+
+.info {
+  padding: 40px;
+  animation: 0.6s ease-in-out 0s 1 normal none running info;
+
+  p {
+    font-size: 16px;
+    color: $orange;
+    margin-bottom: 20px;
+  }
+  li, span {
+    font-size: 16px;
+    color: $pink;
+    line-height: 20px;
+    margin-bottom: 20px;
+  }
+  span {
+    display: block;
+    line-height: 25px;
+  }
+
+  .info__news{
+    margin-bottom: 40px;
+    span {
+      margin-bottom: 20px;
+    }
+  }
+
+}
+
+@media (max-width: 768px){
+  .info{
+    padding-top: 0px;
+  }
+}
+
+@keyframes info {
+  0% {
+    opacity: 0;
+    transform: translateY(20px)
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px)
+  }
+}
+
+.contact{
+  margin: 40px 0;
+}
+.by{
+  position: fixed;
+  bottom: 40px;
+  small{
+    color: $pink;
+  }
+  @media (max-width: 1180px){
+    position: inherit;
+  }
+}
+

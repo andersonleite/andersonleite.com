@@ -9,7 +9,7 @@ const SceneWithoutSSR = dynamic(
 
 export default function HauntedPage() {
   return (
-    <div className={styles.title}>
+    <div className={styles.full}>
       <SceneWithoutSSR y={2} z={10}>
         <Haunted />
       </SceneWithoutSSR>
