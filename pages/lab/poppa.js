@@ -20,7 +20,7 @@ export default function LabPage() {
     <a.main style={{ background }} className={styles.grid}>
       <div className={styles.intro}>
         <p>
-          Poppa is a Brazilian music duo based in London, consisting of{' '}
+          <span className={styles.poppatitle}>-P-o-p-p-a-</span> is a Brazilian music duo based in London, consisting of{' '}
           <a href="https://www.instagram.com/arthurpetrillo/" target="_blank">
             Arthur Petrillo
           </a>{' '}
@@ -39,11 +39,13 @@ export default function LabPage() {
         </p>
       </div>
 
+
       <Canvas className="canvas" dpr={[1, 2]}>
         <Scene setBg={set} />
         <OrbitControls enablePan={false} enableZoom={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} />
       </Canvas>
       {/* <Overlay fill={fill} /> */}
+
 
       <div className={styles.info}>
         <div className={styles.info__news}>

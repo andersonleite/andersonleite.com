@@ -53,10 +53,16 @@ $gbModal: #1d1d1d;
   }
 }
 
-.canvas {
-  order: 2;
-  flex: 1;
-  height: 100%;
+// .canvas {
+//   order: 2;
+//   flex: 1;
+//   height: 100%;
+// }
+
+.poppatitle {
+  display: block;
+  font-size: 45px;
+  color: #f3b5a8;
 }
 
 .overlay {
@@ -124,8 +130,8 @@ $TRANSITION: linear;
     margin: 50px 0;
     box-sizing: border-box;
 
-    will-change: transform;
-    transition: transform $TIMING $TRANSITION;
+    // will-change: transform;
+    // transition: transform $TIMING $TRANSITION;
     position: relative;
     z-index: 2;
     img {
@@ -166,7 +172,7 @@ $TRANSITION: linear;
   .poppa-name {
     height: initial;
     .poppa-letter {
-      transition: transform 10s $TRANSITION;
+      // transition: transform 10s $TRANSITION;
       margin: 7% 0;
       img {
         height: 40px;
