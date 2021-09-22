@@ -7,7 +7,7 @@ import { OrbitControls } from '@react-three/drei';
 import { useSpring } from '@react-spring/core';
 import { a } from '@react-spring/web';
 // import Overlay from './Overlay'
-import Scene from '../../components/poppa/Scene';
+import Scene from '../../components/poppa/scene';
 
 const SceneWithoutSSR = dynamic(
   () => import('../../components/poppa/scene-poppa'),
