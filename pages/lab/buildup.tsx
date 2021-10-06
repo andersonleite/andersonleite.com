@@ -14,6 +14,24 @@ function Cube(props) {
   )
 }
 
+// TODO: fix useTexture
+// function Cube(props) {
+
+//   const textures = useTexture({
+//     'map': '/textures/wall.jpg'
+//   })
+//   // textures.generateMipmaps = false
+//   // textures.minFilter = THREE.NearestFilter;
+//   // textures.magFilter = THREE.NearestFilter;
+
+//   return (
+//     <mesh {...props}>
+//       <boxGeometry args={[1, 1, 1]} />
+//       <meshBasicMaterial attach="material" {...textures} />
+//     </mesh>
+//   )
+// }
+
 function Cylinder(props) {
   return (
     <mesh position={[0, 1.5, 0]}>
@@ -22,6 +40,7 @@ function Cylinder(props) {
     </mesh>
   )
 }
+
 
 function Sphere(props) {
   const [ref, api] = useSphere(() => ({ mass: 1, position: [0, 4, 0], ...props }))
@@ -99,6 +118,7 @@ export default function () {
     </Physics>
     <OrbitControls enablePan={false} enableZoom={false} maxPolarAngle={Math.PI / 2} />
   </Canvas>
+
     </div>
   )
 }
