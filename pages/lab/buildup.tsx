@@ -108,7 +108,7 @@ function PlaneSlide(props) {
 }
 
 function CubeBox(props) {
-  const [useStore] = create((set) => ({
+  const useStore = create((set) => ({
     api: {
       pong(ref) {
         setCollision(true)
@@ -116,7 +116,7 @@ function CubeBox(props) {
     }
   }))
   const [ref] = useBox(() => ({ args: [1, 1, 1], position: [5, 0.5, 0], onCollide: () => pong(ref) }))
-  const { pong } = useStore((state) => state.api)
+  const { pong } = useStore((state) => (state as Store).api)
   const [collision, setCollision] = useState(false)
 
   return (
@@ -126,16 +126,21 @@ function CubeBox(props) {
     </mesh>
   )
 }
+
+interface Store {
+  api: any
+}
+
 function CubeBox2(props) {
-  const [useStore] = create((set) => ({
+  const useStore = create((set) => ({
     api: {
-      pong(ref) {
+      pong() {
         setCollision(true)
       }
     }
   }))
   const [ref] = useBox(() => ({ args: [1, 1, 1], position: [0, 0.5, 6], onCollide: () => pong(ref) }))
-  const { pong } = useStore((state) => state.api)
+  const { pong } = useStore((state) => (state as Store).api)
   const [collision, setCollision] = useState(false)
 
   return (
@@ -146,7 +151,7 @@ function CubeBox2(props) {
   )
 }
 function CubeBox3(props) {
-  const [useStore] = create((set) => ({
+  const useStore = create((set) => ({
     api: {
       pong(ref) {
         setCollision(true)
@@ -154,7 +159,7 @@ function CubeBox3(props) {
     }
   }))
   const [ref] = useBox(() => ({ args: [1, 1, 1], position: [0, 0.5, -6], onCollide: () => pong(ref) }))
-  const { pong } = useStore((state) => state.api)
+  const { pong } = useStore((state) => (state as Store).api)
   const [collision, setCollision] = useState(false)
 
   return (
