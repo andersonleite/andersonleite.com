@@ -1,5 +1,8 @@
 import { DoubleSide } from "three"
-import { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useMemo, useState } from 'react'
+import niceColors from 'nice-color-palettes'
+import create from 'zustand'
+
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, useTexture  } from '@react-three/drei'
 import styles from '../../styles/buildup.module.scss'
@@ -9,7 +12,7 @@ function Cube(props) {
   return (
     <mesh {...props}>
       <boxGeometry args={[1, 1, 1]} />
-      <meshBasicMaterial attach="material" color="green" />
+      <meshBasicMaterial attach="material" color="#87CAC8" wireframe={true} />
     </mesh>
   )
 }
@@ -36,7 +39,7 @@ function Cylinder(props) {
   return (
     <mesh position={[0, 1.5, 0]}>
       <cylinderGeometry {...props} />
-      <meshBasicMaterial attach="material" color="blue" />
+      <meshBasicMaterial attach="material" color="#46bfba" />
     </mesh>
   )
 }
@@ -88,7 +91,76 @@ function PlaneFall(props) {
   return (
     <mesh ref={ref} receiveShadow>
       <planeGeometry attach="geometry" args={[2, 2]} />
-      <meshBasicMaterial attach="material" side={DoubleSide} color={'red'} />
+      <meshBasicMaterial attach="material" side={DoubleSide} color={'#46bfba'} />
+    </mesh>
+  )
+}
+
+function PlaneSlide(props) {
+  const [ref, api] = useBox(() => ({ rotation: [-Math.PI / 2, 10, 0], args: [20, 2, 0.01], ...props }))
+
+  return (
+    <mesh ref={ref} receiveShadow>
+      <planeGeometry attach="geometry" args={[20, 2]} />
+      <meshBasicMaterial attach="material" side={DoubleSide} color={'#46bfba'} />
+    </mesh>
+  )
+}
+
+function CubeBox(props) {
+  const [useStore] = create((set) => ({
+    api: {
+      pong(ref) {
+        setCollision(true)
+      }
+    }
+  }))
+  const [ref] = useBox(() => ({ args: [1, 1, 1], position: [5, 0.5, 0], onCollide: () => pong(ref) }))
+  const { pong } = useStore((state) => state.api)
+  const [collision, setCollision] = useState(false)
+
+  return (
+    <mesh {...props}>
+      <boxGeometry args={[1, 1, 1]} />
+      <meshBasicMaterial attach="material" color={collision ? '#BF5AAA' : '#46bfba'} />
+    </mesh>
+  )
+}
+function CubeBox2(props) {
+  const [useStore] = create((set) => ({
+    api: {
+      pong(ref) {
+        setCollision(true)
+      }
+    }
+  }))
+  const [ref] = useBox(() => ({ args: [1, 1, 1], position: [0, 0.5, 6], onCollide: () => pong(ref) }))
+  const { pong } = useStore((state) => state.api)
+  const [collision, setCollision] = useState(false)
+
+  return (
+    <mesh {...props}>
+      <boxGeometry args={[1, 1, 1]} />
+      <meshBasicMaterial attach="material" color={collision ? '#BF5AAA' : '#46bfba'} />
+    </mesh>
+  )
+}
+function CubeBox3(props) {
+  const [useStore] = create((set) => ({
+    api: {
+      pong(ref) {
+        setCollision(true)
+      }
+    }
+  }))
+  const [ref] = useBox(() => ({ args: [1, 1, 1], position: [0, 0.5, -6], onCollide: () => pong(ref) }))
+  const { pong } = useStore((state) => state.api)
+  const [collision, setCollision] = useState(false)
+
+  return (
+    <mesh {...props}>
+      <boxGeometry args={[1, 1, 1]} />
+      <meshBasicMaterial attach="material" color={collision ? '#BF5AAA' : '#46bfba'} />
     </mesh>
   )
 }
@@ -97,27 +169,35 @@ function PlaneFall(props) {
 export default function () {
   return (
     <div className={styles.full}>
-<Canvas camera={{ position: [2, 1, 6] }}>
-    <Cube position={[2, 0.5, 2]} />
-    <Cube position={[-2, 0.5, 2]} />
-    <Cube position={[-2, 0.5, -2]} />
-    <Cube position={[2, 0.5, -2]} />
-    <Cylinder args={[0.1, 0.1, 3, 32]} />
+      <Canvas camera={{ position: [5, 4, 8] }}>
+          <Cube position={[2, 0.5, 2]} />
+          <Cube position={[-2, 0.5, 2]} />
+          <Cube position={[-2, 0.5, -2]} />
+          <Cube position={[2, 0.5, -2]} />
+          <Cylinder args={[0.1, 0.1, 3, 32]} />
 
-    <axesHelper args={[5]} />
-    <Physics>
-      {/* <Debug color="black" scale={0}> */}
-      <Plane color={'black'} args={[1000, 1000]} />
-      <PlaneFall position={[0, 3.001, 0]} />
-      <SphereFall position={[0, 5, 0]} />
-      <SphereFall position={[0, 10, 0]} />
-      <SphereFall position={[0, 15, 0]} />
-      <SphereFall position={[0, 20, 0]} />
-      <SphereFall position={[0, 25, 0]} />
-      {/* </Debug> */}
-    </Physics>
-    <OrbitControls enablePan={false} enableZoom={false} maxPolarAngle={Math.PI / 2} />
-  </Canvas>
+          {/* <axesHelper args={[5]} /> */}
+          <Physics>
+            {/* <Debug color="black" scale={0}> */}
+            <Plane color={niceColors[17][4]} args={[1000, 1000]} />
+            <PlaneSlide />
+            <PlaneFall position={[0, 3.001, 0]} />
+            <SphereFall position={[0, 5, 0]} />
+            <SphereFall position={[0, 10, 0]} />
+            <SphereFall position={[0, 15, 0]} />
+            <SphereFall position={[0, 20, 0]} />
+            <SphereFall position={[0, 25, 0]} />
+
+            <CubeBox position={[5, 0.5, 0]} />
+            {/* TODO: TO detect collision reusing the cube */}
+            <CubeBox2 position={[0, 0.5, 6]} />
+            <CubeBox3 position={[0, 0.5, -6]} />
+            <SphereFall position={[-7, 5, 0]} />
+
+            {/* </Debug> */}
+          </Physics>
+          <OrbitControls enablePan={false} enableZoom={false} maxPolarAngle={Math.PI / 2 - 0.5} />
+        </Canvas>
 
     </div>
   )
