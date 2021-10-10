@@ -108,16 +108,10 @@ function PlaneSlide(props) {
 }
 
 function CubeBox(props) {
-  const useStore = create((set) => ({
-    api: {
-      pong(ref) {
-        setCollision(true)
-      }
-    }
-  }))
-  const [ref] = useBox(() => ({ args: [1, 1, 1], position: [5, 0.5, 0], onCollide: () => pong(ref) }))
-  const { pong } = useStore((state) => (state as Store).api)
-  const [collision, setCollision] = useState(false)
+  const collision = useStoreN(state => state.collision3)
+  const setCollision = useStoreN(state => state.setCollision3)
+
+  const [ref] = useBox(() => ({ args: [1, 1, 1], position: [5, 0.5, 0], onCollide: () => setCollision() }))
 
   return (
     <mesh {...props}>
@@ -125,23 +119,12 @@ function CubeBox(props) {
       <meshBasicMaterial attach="material" color={collision ? '#BF5AAA' : '#46bfba'} />
     </mesh>
   )
-}
-
-interface Store {
-  api: any
 }
 
 function CubeBox2(props) {
-  const useStore = create((set) => ({
-    api: {
-      pong() {
-        setCollision(true)
-      }
-    }
-  }))
-  const [ref] = useBox(() => ({ args: [1, 1, 1], position: [0, 0.5, 6], onCollide: () => pong(ref) }))
-  const { pong } = useStore((state) => (state as Store).api)
-  const [collision, setCollision] = useState(false)
+  const collision = useStoreN(state => state.collision2)
+  const setCollision = useStoreN(state => state.setCollision2)
+  const [ref] = useBox(() => ({ args: [1, 1, 1], position: [0, 0.5, 6], onCollide: () => setCollision() }))
 
   return (
     <mesh {...props}>
@@ -150,17 +133,33 @@ function CubeBox2(props) {
     </mesh>
   )
 }
+
+type Cubes = {
+  collision1: boolean;
+  setCollision1: any;
+
+  collision2: boolean;
+  setCollision2: any;
+
+  collision3: boolean;
+  setCollision3: any;
+}
+
+const useStoreN = create<Cubes>(set => ({
+  collision1: false,
+  setCollision1: () => set({ collision1: true }),
+  collision2: false,
+  setCollision2: () => set({ collision2: true }),
+  collision3: false,
+  setCollision3: () => set({ collision3: true })
+}))
+
 function CubeBox3(props) {
-  const useStore = create((set) => ({
-    api: {
-      pong(ref) {
-        setCollision(true)
-      }
-    }
-  }))
-  const [ref] = useBox(() => ({ args: [1, 1, 1], position: [0, 0.5, -6], onCollide: () => pong(ref) }))
-  const { pong } = useStore((state) => (state as Store).api)
-  const [collision, setCollision] = useState(false)
+
+  const collision = useStoreN(state => state.collision1)
+  const setCollision = useStoreN(state => state.setCollision1)
+  const [ref] = useBox(() => ({ args: [1, 1, 1], position: [0, 0.5, -6], onCollide: () => setCollision() }))
+
 
   return (
     <mesh {...props}>
