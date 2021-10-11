@@ -1,4 +1,5 @@
-import { DoubleSide } from "three"
+import * as THREE from 'three'
+import { DoubleSide, InstancedMesh } from "three"
 import React, { useEffect, useRef, useMemo, useState } from 'react'
 import niceColors from 'nice-color-palettes'
 import create from 'zustand'
@@ -170,6 +171,31 @@ function CubeBox3(props) {
 }
 // =========
 
+const tempObject = new THREE.Object3D()
+function Spheres() {
+  const meshRef = useRef<InstancedMesh>()
+
+  useEffect(() => {
+    let i = 0
+
+    for (let z = 0; z < 10; z++) {
+      const id = i++
+      tempObject.position.set(-5, 0, 5-z)
+      tempObject.scale.setScalar(1)
+      tempObject.updateMatrix()
+      meshRef.current.setMatrixAt(id, tempObject.matrix)
+    }
+    meshRef.current.instanceMatrix.needsUpdate = true
+  })
+
+  return (
+    <instancedMesh ref={meshRef} args={[null, null, 10]} >
+      <boxGeometry args={[0.6, 0.6, 0.6]} />
+      <meshBasicMaterial color={'#ffffff'} />
+    </instancedMesh>
+  )
+}
+
 export default function () {
   return (
     <div className={styles.full}>
@@ -200,6 +226,8 @@ export default function () {
 
             {/* </Debug> */}
           </Physics>
+
+          <Spheres />
           <OrbitControls enablePan={false} enableZoom={false} maxPolarAngle={Math.PI / 2 - 0.5} />
         </Canvas>
 
