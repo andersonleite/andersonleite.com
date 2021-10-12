@@ -109,14 +109,14 @@ function PlaneSlide(props) {
 }
 
 type Cube = {
-  collision: boolean,
-  setCollision?: any
+  collision: boolean
+  setCollision?: () => void
 }
 
 type Cubes = {
-  cube1: Cube;
-  cube2: Cube;
-  cube3: Cube;
+  cube1: Cube
+  cube2: Cube
+  cube3: Cube
 }
 
 const useStoreN = create<Cubes>(set => ({
@@ -213,7 +213,7 @@ export default function () {
             <CubeBox position={[5, 0.5, 0]} />
             <CubeBox2 position={[0, 0.5, 6]} />
             <CubeBox3 position={[0, 0.5, -6]} />
-            
+
             <SphereFall position={[-7, 5, 0]} />
 
             {/* </Debug> */}
