@@ -108,64 +108,56 @@ function PlaneSlide(props) {
   )
 }
 
-function CubeBox(props) {
-  const collision = useStoreN(state => state.collision3)
-  const setCollision = useStoreN(state => state.setCollision3)
+type Cube = {
+  collision: boolean,
+  setCollision?: any
+}
 
-  const [ref] = useBox(() => ({ args: [1, 1, 1], position: [5, 0.5, 0], onCollide: () => setCollision() }))
+type Cubes = {
+  cube1: Cube;
+  cube2: Cube;
+  cube3: Cube;
+}
+
+const useStoreN = create<Cubes>(set => ({
+  cube1: { collision: false, setCollision: () => set({ cube1: { collision: true} }) },
+  cube2: { collision: false, setCollision: () => set({ cube2: { collision: true} }) },
+  cube3: { collision: false, setCollision: () => set({ cube3: { collision: true} }) },
+}))
+
+function CubeBox(props) {
+  const cube1 = useStoreN(state => state.cube1)
+
+  const [ref] = useBox(() => ({ args: [1, 1, 1], position: [5, 0.5, 0], onCollide: () => cube1.setCollision() }))
 
   return (
     <mesh {...props}>
       <boxGeometry args={[1, 1, 1]} />
-      <meshBasicMaterial attach="material" color={collision ? '#BF5AAA' : '#46bfba'} />
+      <meshBasicMaterial attach="material" color={cube1.collision ? '#BF5AAA' : '#46bfba'} />
     </mesh>
   )
 }
 
 function CubeBox2(props) {
-  const collision = useStoreN(state => state.collision2)
-  const setCollision = useStoreN(state => state.setCollision2)
-  const [ref] = useBox(() => ({ args: [1, 1, 1], position: [0, 0.5, 6], onCollide: () => setCollision() }))
+  const cube2 = useStoreN(state => state.cube2)
+  const [ref] = useBox(() => ({ args: [1, 1, 1], position: [0, 0.5, 6], onCollide: () => cube2.setCollision() }))
 
   return (
     <mesh {...props}>
       <boxGeometry args={[1, 1, 1]} />
-      <meshBasicMaterial attach="material" color={collision ? '#BF5AAA' : '#46bfba'} />
+      <meshBasicMaterial attach="material" color={cube2.collision ? '#BF5AAA' : '#46bfba'} />
     </mesh>
   )
 }
 
-type Cubes = {
-  collision1: boolean;
-  setCollision1: any;
-
-  collision2: boolean;
-  setCollision2: any;
-
-  collision3: boolean;
-  setCollision3: any;
-}
-
-const useStoreN = create<Cubes>(set => ({
-  collision1: false,
-  setCollision1: () => set({ collision1: true }),
-  collision2: false,
-  setCollision2: () => set({ collision2: true }),
-  collision3: false,
-  setCollision3: () => set({ collision3: true })
-}))
-
 function CubeBox3(props) {
-
-  const collision = useStoreN(state => state.collision1)
-  const setCollision = useStoreN(state => state.setCollision1)
-  const [ref] = useBox(() => ({ args: [1, 1, 1], position: [0, 0.5, -6], onCollide: () => setCollision() }))
-
+  const cube3 = useStoreN(state => state.cube3)
+  const [ref] = useBox(() => ({ args: [1, 1, 1], position: [0, 0.5, -6], onCollide: () => cube3.setCollision() }))
 
   return (
     <mesh {...props}>
       <boxGeometry args={[1, 1, 1]} />
-      <meshBasicMaterial attach="material" color={collision ? '#BF5AAA' : '#46bfba'} />
+      <meshBasicMaterial attach="material" color={cube3.collision ? '#BF5AAA' : '#46bfba'} />
     </mesh>
   )
 }
@@ -219,9 +211,9 @@ export default function () {
             <SphereFall position={[0, 25, 0]} />
 
             <CubeBox position={[5, 0.5, 0]} />
-            {/* TODO: TO detect collision reusing the cube */}
             <CubeBox2 position={[0, 0.5, 6]} />
             <CubeBox3 position={[0, 0.5, -6]} />
+            
             <SphereFall position={[-7, 5, 0]} />
 
             {/* </Debug> */}
