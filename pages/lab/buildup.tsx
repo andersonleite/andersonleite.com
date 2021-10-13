@@ -161,6 +161,16 @@ function CubeBox3(props) {
     </mesh>
   )
 }
+
+function SphereInstancedFall(props) {
+  const [ref] = useSphere(() => ({ mass: 1, args: [0.2, 32, 16], ...props }))
+  return (
+    <instancedMesh receiveShadow castShadow ref={ref} args={[null, null, 10]}>
+      <sphereBufferGeometry attach="geometry" args={[0.2, 32, 16]} />
+      <meshBasicMaterial color={'#C9BA73'} />
+    </instancedMesh>
+  )
+}
 // =========
 
 const tempObject = new THREE.Object3D()
@@ -215,6 +225,7 @@ export default function () {
             <CubeBox3 position={[0, 0.5, -6]} />
 
             <SphereFall position={[-7, 5, 0]} />
+            <SphereInstancedFall />
 
             {/* </Debug> */}
           </Physics>
