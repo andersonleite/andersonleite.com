@@ -195,7 +195,8 @@ stair.receiveShadow = true;
 function Stair () {
   return (
     <mesh castShadow receiveShadow>
-      <boxGeometry args={[3, .025, .5]} translate={[1.5-.1, 0, 0]} />
+      {/* TODO translate={[1.5-.1, 0, 0]} */}
+      <boxGeometry args={[3, .025, .5]}  />
       <meshPhongMaterial color={'rebeccapurple'} />
     </mesh>
   )
