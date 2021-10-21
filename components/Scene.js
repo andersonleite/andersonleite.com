@@ -9,8 +9,7 @@ const Scene =(props) =>{
 
   return (
 
-    <Canvas
-      pixelRatio={window.devicePixelRatio}
+ 
       camera={{ position: [props.x || 0, props.y || 0, props.z || 3] }
       }>
       <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />

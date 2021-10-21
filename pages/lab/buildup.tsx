@@ -173,6 +173,48 @@ function SphereInstancedFall(props) {
 }
 // =========
 
+// Stairs
+
+function Ball() {
+
+  return (
+    <mesh castShadow position={[2, .2, .25]}>
+      <boxGeometry args={[.4, .4, .4]} />
+      <meshLambertMaterial color={'red'} />
+    </mesh>
+  )
+}
+
+const nInst = 24;
+const geom = new THREE.BoxGeometry(3, .025, .5).translate(1.5 - .1, 0, 0);
+const mat = new THREE.MeshPhongMaterial({color: 'rebeccapurple'});
+const stair = new THREE.InstancedMesh(geom, mat, nInst);
+stair.castShadow = true;
+stair.receiveShadow = true;
+
+function Stair () {
+  return (
+    <mesh castShadow receiveShadow>
+      <boxGeometry args={[3, .025, .5]} translate={[1.5-.1, 0, 0]} />
+      <meshPhongMaterial color={'rebeccapurple'} />
+    </mesh>
+  )
+}
+
+
+// function Pole() {
+//   return (
+//     <mesh>
+//       <cylinderGeometry
+//     </mesh>
+//     const geom = new THREE.CylinderGeometry(.05, .05, 100, 16, 1);
+//     const mesh = new THREE.Mesh(geom, mat);
+//     stair.add(mesh);
+//   )
+// }
+
+// == stairs
+
 const tempObject = new THREE.Object3D()
 function Spheres() {
   const meshRef = useRef<InstancedMesh>()
@@ -232,6 +274,13 @@ export default function () {
 
           <Spheres />
           <OrbitControls enablePan={false} enableZoom={false} maxPolarAngle={Math.PI / 2 - 0.5} />
+
+          <Ball />
+          {/* <Pole /> */}
+          <Stair />
+          <ambientLight color={'white'} intensity={.5} />
+          {/* TODO // light0.shadow.bias = -0.00002; */}
+          <directionalLight castShadow position={[1,5,1]} />
         </Canvas>
 
     </div>
