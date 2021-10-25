@@ -4,8 +4,9 @@ import React, { useEffect, useRef, useMemo, useState } from 'react'
 import niceColors from 'nice-color-palettes'
 import create from 'zustand'
 
+
 import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls, useTexture  } from '@react-three/drei'
+import { OrbitControls, useTexture, Sky  } from '@react-three/drei'
 import styles from '../../styles/buildup.module.scss'
 import { usePlane, useBox, useSphere, Physics } from '@react-three/cannon'
 
@@ -278,6 +279,7 @@ export default function () {
 
           <Ball />
           {/* <Pole /> */}
+          <Sky sunPosition={[100, 10, 100]} distance={1000} />
           <Stair />
           <ambientLight color={'white'} intensity={.5} />
           {/* TODO // light0.shadow.bias = -0.00002; */}
