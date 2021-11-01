@@ -9,15 +9,7 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, useTexture, Sky  } from '@react-three/drei'
 import styles from '../../styles/buildup.module.scss'
 import { usePlane, useBox, useSphere, Physics } from '@react-three/cannon'
-
-function Cube(props) {
-  return (
-    <mesh {...props}>
-      <boxGeometry args={[1, 1, 1]} />
-      <meshBasicMaterial attach="material" color="#87CAC8" wireframe={true} />
-    </mesh>
-  )
-}
+import { Cube, Cylinder } from '../../components/buildup/buildup'
 
 // TODO: fix useTexture
 // function Cube(props) {
@@ -37,14 +29,7 @@ function Cube(props) {
 //   )
 // }
 
-function Cylinder(props) {
-  return (
-    <mesh position={[0, 1.5, 0]}>
-      <cylinderGeometry {...props} />
-      <meshBasicMaterial attach="material" color="#46bfba" />
-    </mesh>
-  )
-}
+
 
 
 function Sphere(props) {
