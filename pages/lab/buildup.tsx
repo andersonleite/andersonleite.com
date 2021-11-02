@@ -9,7 +9,7 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, useTexture, Sky  } from '@react-three/drei'
 import styles from '../../styles/buildup.module.scss'
 import { usePlane, useBox, useSphere, Physics } from '@react-three/cannon'
-import { Cube, Cylinder } from '../../components/buildup/buildup'
+import { Ball, Cube, Cylinder } from '../../components/buildup/buildup'
 
 // TODO: fix useTexture
 // function Cube(props) {
@@ -28,21 +28,6 @@ import { Cube, Cylinder } from '../../components/buildup/buildup'
 //     </mesh>
 //   )
 // }
-
-
-
-
-function Sphere(props) {
-  const [ref, api] = useSphere(() => ({ mass: 1, position: [0, 4, 0], ...props }))
-  useFrame(({ clock }) => api.position.set(Math.sin(clock.getElapsedTime()) * 5, 1, 1))
-
-  return (
-    <mesh >
-      <sphereGeometry />
-      <meshNormalMaterial attach="material" />
-    </mesh>
-  )
-}
 
 // Physics
 // =========
@@ -160,17 +145,6 @@ function SphereInstancedFall(props) {
 // =========
 
 // Stairs
-
-function Ball() {
-
-  return (
-    <mesh castShadow position={[2, .2, .25]}>
-      <boxGeometry args={[.4, .4, .4]} />
-      <meshLambertMaterial color={'red'} />
-    </mesh>
-  )
-}
-
 const nInst = 24;
 const geom = new THREE.BoxGeometry(3, .025, .5).translate(1.5 - .1, 0, 0);
 const mat = new THREE.MeshPhongMaterial({color: 'rebeccapurple'});

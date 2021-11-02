@@ -15,3 +15,26 @@ export function Cylinder(props) {
     </mesh>
   )
 }
+
+export function Sphere(props) {
+  const [ref, api] = useSphere(() => ({ mass: 1, position: [0, 4, 0], ...props }))
+  useFrame(({ clock }) => api.position.set(Math.sin(clock.getElapsedTime()) * 5, 1, 1))
+
+  return (
+    <mesh >
+      <sphereGeometry />
+      <meshNormalMaterial attach="material" />
+    </mesh>
+  )
+}
+
+
+export function Ball() {
+
+  return (
+    <mesh castShadow position={[2, .2, .25]}>
+      <boxGeometry args={[.4, .4, .4]} />
+      <meshLambertMaterial color={'red'} />
+    </mesh>
+  )
+}
