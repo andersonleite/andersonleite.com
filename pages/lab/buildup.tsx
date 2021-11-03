@@ -11,6 +11,8 @@ import styles from '../../styles/buildup.module.scss'
 import { usePlane, useBox, useSphere, Physics } from '@react-three/cannon'
 import { Ball, Cube, Cylinder } from '../../components/buildup/buildup'
 
+import Vehicle from '../../components/vehicle/vehicle'
+
 // TODO: fix useTexture
 // function Cube(props) {
 
@@ -231,6 +233,7 @@ export default function () {
             <SphereInstancedFall />
 
             {/* </Debug> */}
+            <Vehicle position={[-10, 2, 0]} rotation={[0, -Math.PI / 4, 0]} angularVelocity={[0, 0.5, 0]} wheelRadius={0.3} />
           </Physics>
 
           <Spheres />
