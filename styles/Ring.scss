@@ -1,0 +1,60 @@
+.full {
+  height: 100vh !important;
+  width: 100%;
+  background-color: #f2f2f2;
+  height: 100%;
+  overflow: hidden;
+}
+
+.Loop {
+  position: relative;
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.section {
+  position: relative;
+  text-align: center;
+  min-height: 300px;
+  max-height: 700px;
+  height: 80%;
+}
+
+// ::scrollbar {
+//   display: none;
+// }
+
+// body {
+//   font-family: "Avenir Next", Helvetica, sans-serif;
+//   font-weight: normal;
+//   font-size: 100%;
+// }
+
+.one {
+  background-color: #81234e;
+}
+
+.two {
+  background-color: #df5252;
+}
+
+.three {
+  background-color: #ff9a56;
+}
+
+.four {
+  background-color: #371465;
+}
+
+.h1 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  font-size: 80px;
+  letter-spacing: 5px;
+  color: #fff;
+  text-transform: uppercase;
+}
