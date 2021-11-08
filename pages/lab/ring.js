@@ -1,11 +1,5 @@
 import { useEffect, useState } from 'react'
-import dynamic from 'next/dynamic'
 import Ring from '../../components/ring/Ring'
-
-const Window = dynamic(
-  () => import('../../components/window-container'),
-  { ssr: false }
-)
 
 export default function LabPage() {
   const [disableScroll, setDisableScroll] = useState(false)
@@ -49,7 +43,6 @@ function reCalc () {
 }
 
 function scrollUpdate () {
-  console.log('jmmm.....');
   if (!disableScroll) {
     scrollPos = getScrollPos();
 
@@ -70,7 +63,6 @@ function scrollUpdate () {
       setDisableScroll(false);
     }, 40);
   }
-
 }
 
   function init () {
@@ -100,8 +92,6 @@ function scrollUpdate () {
   })
 
   return (
-    // <Window>
-      <Ring />
-    // </Window>
+    <Ring />
   )
 }

@@ -1,8 +1,4 @@
-
-
 export default function Ring() {
-
-
   return (
     <div className="full">
         <main className="Loop jsLoop">
