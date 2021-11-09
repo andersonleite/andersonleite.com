@@ -24,7 +24,7 @@ function setScrollPos (pos) {
 function getClonesHeight () {
   clonesHeight = 0;
 
-  for (i = 0; i < clones.length; i += 1) {
+  for (i = 0; i < window.document.querySelectorAll('.isClone').length; i += 1) {
     clonesHeight = clonesHeight + clones[i].offsetHeight;
   }
 
@@ -45,6 +45,8 @@ function reCalc () {
 function scrollUpdate () {
   if (!disableScroll) {
     scrollPos = getScrollPos();
+
+    clonesHeight = getClonesHeight();
 
     if (clonesHeight + scrollPos >= scrollHeight) {
       // Scroll to the top when you’ve reached the bottom

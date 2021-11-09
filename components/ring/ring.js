@@ -22,10 +22,10 @@ export default function Ring() {
         </section>
 
         {/* fake blocks */}
-        <section className="section one isCLone">
+        <section className="section one isClone">
           <h1 className="h1">One</h1>
         </section>
-        <section className="section two isCLone">
+        <section className="section two isClone">
           <h1 className="h1">For</h1>
         </section>
       </main>
