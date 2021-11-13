@@ -62,7 +62,7 @@ export default function Vehicle({ radius = 0.7, width = 1.2, height = -0.04, fro
       <Wheel ref={wheel1} radius={radius} leftSide />
       <Wheel ref={wheel2} radius={radius} />
       <Wheel ref={wheel3} radius={radius} leftSide />
-      <Wheel ref={wheel4} radius={radius} /> */}
+      <Wheel ref={wheel4} radius={radius} />
     </group>
   )
 }
