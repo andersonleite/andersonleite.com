@@ -7,16 +7,16 @@
   position: relative;
   height: 100vh;
   width: 100%;
-  background: #46bfba; /* Old browsers */
-  background: -moz-linear-gradient(top,  #46bfba 0%, #000000 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  #46bfba 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  #46bfba 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#46bfba', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+  background: #fff; /* Old browsers */
+  // background: -moz-linear-gradient(top,  #fff 80%, #000000 100%); /* FF3.6-15 */
+  // background: -webkit-linear-gradient(top,  #fff 80%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+  // background: linear-gradient(to bottom,  #fff 80%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E41736', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 }
 
 .info {
   top: 20px;
-  color: white;
+  color: black;
   font-family: monospace;
   font-size: 14px;
   right: 20px;
@@ -34,7 +34,7 @@
     top: initial;
 
     a {
-      color: #46bfba;
+      color: #E41736;
     }
   }
 }

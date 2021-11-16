@@ -10,8 +10,8 @@ const SceneT =(props) =>{
       }>
       {/* <ambientLight color={'#999999'}/> */}
       <directionalLight color={'#ffffff'} intensity={1} position={[1, 0, 0]} />
-      <directionalLight color={'#87CAC8'} intensity={1} position={[0.75, 1, 0.5]} />
-      <directionalLight color={'#18403E'} intensity={1} position={[-0.75, -1, 0.5]} />
+      <directionalLight color={'#E41736'} intensity={1} position={[0.75, 1, 0.5]} />
+      <directionalLight color={'#E41736'} intensity={1} position={[-0.75, -1, 0.5]} />
       {props.children}
     </Canvas >
   )
