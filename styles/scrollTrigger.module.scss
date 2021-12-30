@@ -1,0 +1,22 @@
+.full {
+  height: 100vh !important;
+  width: 100%;
+}
+
+.panel {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.first {
+  background-color: hotpink;
+}
+.second {
+  background-color: rebeccapurple;
+}
+.thrid {
+  background-color: green;
+}
