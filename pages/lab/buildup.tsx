@@ -52,7 +52,7 @@ function SphereFall(props) {
   return (
     <mesh receiveShadow castShadow ref={ref}>
       <sphereBufferGeometry attach="geometry" args={[0.2, 32, 16]} />
-      <meshNormalMaterial attach="material" color="hotpink" />
+      <meshNormalMaterial attach="material" />
     </mesh>
   )
 }
