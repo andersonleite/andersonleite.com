@@ -5,7 +5,7 @@ import { useFrame, useThree } from '@react-three/fiber';
 
 export const Lense: VFC = () => {
 	const ref = useRef<THREE.Mesh>(null)
-	// const texture = useTexture('/textures/lense.png')
+	const texture = useTexture('/textures/lense.png')
 	const { aspect } = useThree(({ viewport }) => viewport)
 
 	const target = new THREE.Vector3()
