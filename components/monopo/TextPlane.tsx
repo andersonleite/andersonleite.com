@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import { Plane } from '@react-three/drei';
 import { ThreeEvent, useFrame, useThree } from '@react-three/fiber';
 import { Drawer } from './drawer';
+import React from 'react';
 
 type TextPlaneProps = {
 	text: [string, string]
@@ -47,9 +48,11 @@ export const TextPlane: VFC<TextPlaneProps> = props => {
 		shader.uniforms.u_enable.value = false
 	}
 
+	const { viewport } = useThree()
+
 	return (
 		<Plane
-			args={[2.6, 2.6 / drawer.aspect]}
+			args={[viewport.width, viewport.height / drawer.aspect]}
 			scale={[1 / aspect, 1, 1]}
 			onPointerMove={handlePointerMove}
 			onPointerEnter={handlePointerEnter}

@@ -1,8 +1,9 @@
 import { VFC } from 'react';
 import * as THREE from 'three';
 import { Plane } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
+import { useFrame, useThree } from '@react-three/fiber';
 import { cnoise21 } from './noise';
+import React from 'react';
 
 export const Background: VFC = () => {
 	const shader: THREE.Shader = {
@@ -20,11 +21,13 @@ export const Background: VFC = () => {
 		target.set((mouse.x + 1) * 0.5, (mouse.y + 1) * 0.5)
 		shader.uniforms.u_mouse.value.lerp(target, 0.2)
 	})
+  const { viewport } = useThree()
 
 	return (
-		<Plane args={[2, 2]}>
-			<shaderMaterial args={[shader]} />
-		</Plane>
+
+    <Plane args={[viewport.width, viewport.height]}>
+      <shaderMaterial args={[shader]} />
+    </Plane>
 	)
 }
 
