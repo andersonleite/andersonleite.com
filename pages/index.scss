@@ -147,7 +147,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0 10%;
 }
 
@@ -509,7 +509,7 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100dvh;
+  // min-height: 100dvh;
   width: 80%;
   margin: 0 auto;
 }
@@ -575,7 +575,7 @@ a.link {
   pointer-events: all;
 
   @include media("<desktop") {
-    // flex-direction: column;
+    flex-direction: column;
   }
 
   li {
@@ -583,6 +583,12 @@ a.link {
 
     &:first-child {
       margin-left: 0;
+    }
+
+    @include media("<desktop") {
+
+      margin-left: 0;
+      height: 50px;
     }
   }
 }
@@ -661,3 +667,8 @@ small.hello {
 }
 
 
+@include media("<desktop") {
+  canvas {
+    display: none !important;
+  }
+}
