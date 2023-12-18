@@ -1,3 +1,6 @@
+@import 'node_modules/include-media/dist/include-media';
+
+
 // Colors
 $white: #c9cbc4;
 $green: #46bfba;
@@ -506,7 +509,7 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100dvh;
+  min-height: 100dvh;
   width: 80%;
   margin: 0 auto;
 }
@@ -571,6 +574,10 @@ a.link {
   margin-top: 2rem;
   pointer-events: all;
 
+  @include media("<desktop") {
+    // flex-direction: column;
+  }
+
   li {
     margin: 0 .5rem;
 
@@ -604,6 +611,10 @@ small.hello {
   top: 0;
   color: #ffffff;
   pointer-events: none;
+
+  @include media("<desktop") {
+    padding: 5rem 0;
+  }
 }
 
 .latest-work {
@@ -648,3 +659,5 @@ small.hello {
     }
   }
 }
+
+
