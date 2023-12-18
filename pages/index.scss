@@ -494,3 +494,157 @@ h2 {
 .social-link-name {
   transition: all 200ms ease;
 }
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+.main {
+	font-family: 'Noto Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.copy {
+  font-size: clamp(24px, calc(14.40px + 2.00vw), 40px);
+  font-weight: 400;
+  line-height: 1.2;
+
+  span {
+    color: #fff;
+    position: relative;
+    display: inline-flex;
+    padding: 0 .5rem;
+    will-change: clip-path;
+
+    &:before {
+      content: attr(data-value);
+      will-change: clip-path;
+      color: #fff;
+      background-color: #DA0055;
+      text-align: center;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+      animation: xRay 2s ease-in-out forwards;
+    }
+  }
+
+  @keyframes xRay {
+    0% {
+     clip-path: polygon(0 0, 0 100%, 0 100%, 0 0);
+    }
+
+    100% {
+     clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+    }
+  }
+}
+
+a.link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  background-color: #1f1f1f;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.5s ease-in-out;
+  font-size: 16px;
+
+  &:hover {
+    background-color: #ff0055;
+  }
+}
+
+.links {
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  margin-top: 2rem;
+  pointer-events: all;
+
+  li {
+    margin: 0 .5rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+small.hello {
+  animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s;        /* Change to speed up or slow down */
+  animation-iteration-count: infinite;  /* Never stop waving :) */
+  transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+  display: inline-block;
+
+  @keyframes wave-animation {
+      0% { transform: rotate( 0.0deg) }
+    10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+    20% { transform: rotate(-8.0deg) }
+    30% { transform: rotate(14.0deg) }
+    40% { transform: rotate(-4.0deg) }
+    50% { transform: rotate(10.0deg) }
+    60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+    100% { transform: rotate( 0.0deg) }
+  }
+}
+
+.main-container {
+  position: absolute;
+  top: 0;
+  color: #ffffff;
+  pointer-events: none;
+}
+
+.latest-work {
+  font-size: 16px;
+  pointer-events: all;
+  margin-top: 2rem;
+  width: 100%;
+
+  span {
+    color: grey;
+    font-weight: 100;
+    font-style: italic;
+  }
+
+  h3 {
+    font-weight: 700;
+  }
+
+  article {
+    margin-bottom: 1rem;
+  }
+}
+
+.lang {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: right;
+  padding: 1rem;
+
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    pointer-events: all;
+    li {
+      cursor: pointer;
+      margin-left: 1rem;
+
+      &.selected {
+        border-bottom: 1px solid #fff;
+      }
+    }
+  }
+}
