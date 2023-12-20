@@ -60,6 +60,7 @@ export default function LabPage() {
                   <h3>Personal Projects</h3>
                   <p>Partnered with an experienced WebGL developer to enhance my understanding of WebGL and shaders.</p>
                   <ul>
+                    <li><a href="https://cube-navy.vercel.app/" target="_blank" rel="noopener">PNDR 3D cube</a></li>
                     <li><a href="https://castlecrushgame.com/" target="_blank" rel="noopener">Castle Crush Game</a></li>
                     <li><a href="https://www.el-hempe.com/" target="_blank" rel="noopener">El Hempe</a></li>
                   </ul>
