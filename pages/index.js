@@ -13,7 +13,7 @@ export default function LabPage() {
     <div className={styles.full}>
       <SceneWithoutSSR z={3}>
         <Background />
-        <Lense />
+        {/* <Lense /> */}
         {/* <TextPlane
 					text={['What shall', 'I create today?']}
 					vertexShader={enVertexShader}
