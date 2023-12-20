@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic'
 import styles from '../styles/Lab.module.scss'
 import {Background} from '../components/monopo/Background'
 import {Lense} from '../components/monopo/Lense'
+import { Analytics } from '@vercel/analytics/react';
 
 const SceneWithoutSSR = dynamic(
   () => import('../components/tetrahedron/SceneT'),
@@ -11,6 +12,7 @@ const SceneWithoutSSR = dynamic(
 export default function LabPage() {
   return (
     <div className={styles.full}>
+      <Analytics />
       <SceneWithoutSSR z={3}>
         <Background />
         {/* <Lense /> */}
