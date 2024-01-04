@@ -34,6 +34,12 @@ export default function LabPage() {
           </div> */}
           <div className="copy">
             <small className='hello'>👋🏻</small> Hello! My name is <span data-value="Anderson Leite">Anderson Leite</span>, a Web Developer with experience as a Technology Lead and Sr. Frontend Developer, currently living in Tokyo, Japan. I have a degree in Software Engineering and an MBA in Digital Marketing.
+            <ul className="links">
+              <li><a className='link' rel="stylesheet" href="mailto:andersonlfl@gmail.com" target="_blank">Email</a></li>
+              <li><a className='link' rel="stylesheet" href="https://www.linkedin.com/in/leiteanderson/" target="_blank">LinkedIn</a></li>
+              <li><a className='link' rel="stylesheet" href="https://github.com/andersonleite/" target="_blank">Github</a></li>
+              <li><a className='link' rel="stylesheet" href="https://www.instagram.com/andersonleite/" target="_blank">Instagram</a></li>
+            </ul>
           </div>
 
         <div className="latest-work">
@@ -42,25 +48,38 @@ export default function LabPage() {
 
               <article>
                   <h3>Technology Lead at R/GA, at Google <span>Tokyo</span></h3>
-                  <p>Delivered websites, campaigns, and chatbots using JavaScript and Google AI technologies.</p>
+                  <p className="txt-desc">Delivered websites, campaigns, and chatbots using JavaScript and Google AI technologies.</p>
                   <ul>
                       <li><a href="https://giga.withgoogle.com/" target="_blank" rel="noopener">Google Giga</a></li>
                       <li><a href="https://lessonlibrary.withgoogle.com/intl/ALL_jp/" target="_blank" rel="noopener">Google Lesson Library</a></li>
                       <li><a href="https://submissions.youtubefanfest.com/intl/id_id/" target="_blank" rel="noopener">YouTube Fanfest Submissions</a></li>
+                      <li><a href="https://playground-dot-gweb-gteam-preview.an.r.appspot.com/spotlight/" target="_blank" rel="noopener">Google Pixel Spotlight</a></li>
+                      <li><a href="https://9to5google.com/2022/09/12/pixel-7-google-potato-chips/" target="_blank" rel="noopener">Google Pixel Chips</a></li>
                   </ul>
               </article>
 
               <article>
                   <h3>Sr. Frontend Engineer at Apple <span>San Francisco</span></h3>
-                  <p>Launched the site showcasing Apple stores around the world using Next.js and React.</p>
+                  <p className="txt-desc">Launched the site showcasing Apple stores around the world using Next.js and React.</p>
                   <ul>
                       <li><a href="https://www.apple.com/jp/today/" target="_blank" rel="noopener">Today at Apple</a></li>
+                      <li><a href="https://www.apple.com/retail/instore-shopping-session/" target="_blank" rel="noopener">Shop with a specialist</a></li>
+                  </ul>
+              </article>
+
+              <article>
+                  <h3>Technology Lead at R/GA <span>São Paulo</span></h3>
+                  <p className="txt-desc">Worked on websites and mobile apps for Tim, Nike, Samsumg and Google. </p>
+                  <ul>
+                      <li><a href="https://vimeo.com/246258103" target="_blank" rel="noopener">Nike - Come Together</a></li>
+                      <li><a href="https://www.youtube.com/watch?v=eVdK2qNYblM" target="_blank" rel="noopener">Tim Beta - Missions</a></li>
+                      <li><a href="https://vimeo.com/85444403" target="_blank" rel="noopener">Tim Beta - Blablameter</a></li>
                   </ul>
               </article>
 
               <article>
                   <h3>Personal Projects</h3>
-                  <p>Partnered with an experienced WebGL developer to enhance my understanding of WebGL and shaders.</p>
+                  <p className="txt-desc">Partnered with an experienced WebGL developer to enhance my understanding of WebGL and shaders.</p>
                   <ul>
                     <li><a href="https://cube-navy.vercel.app/" target="_blank" rel="noopener">PNDR 3D cube</a></li>
                     <li><a href="https://castlecrushgame.com/" target="_blank" rel="noopener">Castle Crush Game</a></li>
@@ -70,12 +89,6 @@ export default function LabPage() {
           </section>
         </div>
 
-        <ul className="links">
-          <li><a className='link' rel="stylesheet" href="mailto:andersonlfl@gmail.com" target="_blank">Email</a></li>
-          <li><a className='link' rel="stylesheet" href="https://www.linkedin.com/in/leiteanderson/" target="_blank">LinkedIn</a></li>
-          <li><a className='link' rel="stylesheet" href="https://github.com/andersonleite/" target="_blank">Github</a></li>
-          <li><a className='link' rel="stylesheet" href="https://www.instagram.com/andersonleite/" target="_blank">Instagram</a></li>
-        </ul>
         </div>
 
 

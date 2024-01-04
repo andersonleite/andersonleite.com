@@ -506,18 +506,24 @@ h2 {
 .main {
 	font-family: 'Noto Sans', sans-serif;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   // min-height: 100dvh;
   width: 80%;
   margin: 0 auto;
+
+  @include media("<desktop") {
+    flex-direction: column;
+  }
 }
 
 .copy {
   font-size: clamp(24px, calc(14.40px + 2.00vw), 40px);
   font-weight: 400;
   line-height: 1.2;
+  flex: 1;
+  margin-right: 5rem;
 
   span {
     color: #fff;
@@ -575,7 +581,8 @@ a.link {
   pointer-events: all;
 
   @include media("<desktop") {
-    flex-direction: column;
+    // flex-direction: column;
+    display: none;
   }
 
   li {
@@ -626,8 +633,8 @@ small.hello {
 .latest-work {
   font-size: 16px;
   pointer-events: all;
-  margin-top: 2rem;
   width: 100%;
+  flex: 1;
 
   span {
     color: grey;
@@ -659,6 +666,7 @@ small.hello {
       cursor: pointer;
       margin-left: 1rem;
 
+
       &.selected {
         border-bottom: 1px solid #fff;
       }
@@ -671,4 +679,10 @@ small.hello {
   canvas {
     display: none !important;
   }
+}
+
+.txt-desc {
+  color: darkgray;
+  font-weight: 100;
+  font-size: 14px;
 }
