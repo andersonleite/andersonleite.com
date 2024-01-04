@@ -69,7 +69,7 @@ export default function LabPage() {
 
               <article>
                   <h3>Technology Lead at R/GA <span>São Paulo</span></h3>
-                  <p className="txt-desc">Worked on websites and mobile apps for Tim, Nike, Samsumg and Google. </p>
+                  <p className="txt-desc">Worked on websites and mobile apps for Tim, Nike, Samsung and Google. </p>
                   <ul>
                       <li><a href="https://vimeo.com/246258103" target="_blank" rel="noopener">Nike - Come Together</a></li>
                       <li><a href="https://www.youtube.com/watch?v=eVdK2qNYblM" target="_blank" rel="noopener">Tim Beta - Missions</a></li>
