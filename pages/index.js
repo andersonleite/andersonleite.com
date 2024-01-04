@@ -79,7 +79,7 @@ export default function LabPage() {
 
               <article>
                   <h3>Personal Projects</h3>
-                  <p className="txt-desc">WebGL and shaders</p>
+                  <p className="txt-desc">Collaborated with a skilled WebGL developer to deepen my knowledge of WebGL and shaders.</p>
                   <ul>
                     <li><a href="https://cube-navy.vercel.app/" target="_blank" rel="noopener">PNDR 3D cube</a></li>
                     <li><a href="https://castlecrushgame.com/" target="_blank" rel="noopener">Castle Crush Game</a></li>
@@ -87,7 +87,7 @@ export default function LabPage() {
                   </ul>
                   <p className="txt-desc">Books</p>
                   <ul>
-                    <li><a href="https://www.amazon.com.br/Desenvolvimento-Jogos-Android-Anderson-Leite/dp/8566250176" target="_blank" rel="noopener">Android Game Development</a></li>
+                    <li><a href="https://books.google.co.jp/books/about/Desenvolvimento_de_Jogos_para_iOS.html?id=PGWCCwAAQBAJ&redir_esc=y" target="_blank" rel="noopener">Android Game Development</a></li>
                     <li><a href="https://books.google.co.jp/books/about/Desenvolvimento_de_Jogos_para_iOS.html?id=PGWCCwAAQBAJ&redir_esc=y" target="_blank" rel="noopener">iOS Game Development</a></li>
                   </ul>
               </article>
