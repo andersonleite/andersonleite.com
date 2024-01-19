@@ -33,7 +33,7 @@ export default function LabPage() {
             </ul>
           </div> */}
           <div className="copy">
-            <small className='hello'>👋🏻</small> Hello! My name is <span data-value="Anderson Leite">Anderson Leite</span>, a Web Developer with experience as a Technology Lead and Sr. Frontend Developer, currently living in Tokyo, Japan. I have a degree in Software Engineering and an MBA in Digital Marketing
+            <small className='hello'>👋🏻</small> Hello! My name is <span data-value="Anderson Leite">Anderson Leite</span>, a Web Engineer with experience as a Technology Lead and Sr. Frontend Developer, currently living in Tokyo, Japan. I have a degree in Software Engineering and an MBA in Digital Marketing
             <ul className="links">
               <li><a className='link' rel="stylesheet" href="mailto:andersonlfl@gmail.com" target="_blank">Email</a></li>
               <li><a className='link' rel="stylesheet" href="https://www.linkedin.com/in/leiteanderson/" target="_blank">LinkedIn</a></li>
