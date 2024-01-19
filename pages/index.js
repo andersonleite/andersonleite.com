@@ -48,7 +48,7 @@ export default function LabPage() {
 
               <article>
                   <h3>Technology Lead at R/GA, at Google <span>Tokyo</span></h3>
-                  <p className="txt-desc">Delivered websites, campaigns, and chatbots using JavaScript and Google AI technologies.</p>
+                  <p className="txt-desc">Delivered websites, platforms, and chatbots using JavaScript and Google AI technologies.</p>
                   <ul>
                       <li><a href="https://giga.withgoogle.com/" target="_blank" rel="noopener">Google Giga</a></li>
                       <li><a href="https://lessonlibrary.withgoogle.com/intl/ALL_jp/" target="_blank" rel="noopener">Google Lesson Library</a></li>
