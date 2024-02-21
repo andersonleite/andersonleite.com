@@ -58,9 +58,11 @@ float random(vec2 p) {
 }
 
 const vec3 black = vec3(0.0);
-const vec3 color1 = vec3(0.121, 0.316, 0.333);  // #1F5155
-const vec3 color2 = vec3(0.169, 0.204, 0.278);  // #2B3347
-const vec3 color3 = vec3(0.184, 0.125, 0.129);  // #2F2021
+const vec3 color1 = vec3(0.0, 0.0, 0.0);      // Black
+const vec3 color2 = vec3(1.0, 1.0, 1.0);      // White
+const vec3 color3 = vec3(0.5, 0.5, 0.5);      // Mid-grey
+
+
 
 // const vec3 color1 = vec3(1.0, 0.0, 0.333);  // #FF0055
 

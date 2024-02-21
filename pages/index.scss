@@ -111,6 +111,7 @@ html {
   font-size: 14px;
   font-family: "Untitled",Arial,Helvetica,sans-serif;
   overflow: initial;
+  line-height: 1.4;
 }
 *,
 *:before,
@@ -509,8 +510,16 @@ h2 {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.2;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   width: 100%;
+
+  .copy-link {
+    margin-top: .5rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 
   span {
     color: #fff;
@@ -608,7 +617,6 @@ small.hello {
 
 .main-container {
   color: grey;
-  pointer-events: none;
 
   @include media("<desktop") {
     // padding: 2rem 0;
@@ -633,11 +641,13 @@ small.hello {
       margin-top: .5rem;
     }
 
-    .external-link {
-      display: inline-block;
-      transform: scaleX(-1);
-    }
   }
+}
+.external-link {
+  display: inline-block;
+  transform: scaleX(-1);
+  padding-left: .3rem;
+  padding-right: .3rem;
 }
 
 .lang {
@@ -674,4 +684,9 @@ small.hello {
   color: grey;
   font-weight: 100;
   font-size: 14px;
+}
+
+.no-link {
+  color: white;
+  display: inline;
 }
