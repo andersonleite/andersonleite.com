@@ -4,6 +4,7 @@
 // Colors
 $white: #c9cbc4;
 $green: #46bfba;
+$red: #ff0055;
 $grey_light: #e8e6e6;
 $grey_dark: white;
 
@@ -108,7 +109,7 @@ nav {
 html {
   box-sizing: border-box;
   font-size: 14px;
-  font-family: sans-serif;
+  font-family: "Untitled",Arial,Helvetica,sans-serif;
   overflow: initial;
 }
 *,
@@ -118,7 +119,6 @@ html {
 }
 body {
   background-color: black;
-  min-height: 100%;
   padding: 0;
   margin: 0;
   // overflow: hidden;
@@ -129,26 +129,17 @@ body,
 #root,
 main {
   width: 100%;
-  height: 100%;
   margin: 0;
   padding: 0;
 }
 
 a {
   text-decoration: none;
-  color: $green;
+  color: white;
 }
 
 * {
   box-sizing: border-box;
-}
-
-.main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0 10%;
 }
 
 @keyframes intro {
@@ -236,7 +227,7 @@ h1 {
 
 .description {
   color: $grey_dark;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 30px;
   grid-column-start: 2;
   grid-column-end: 5;
@@ -248,8 +239,7 @@ h1 {
 a {
   transition: all 200ms ease;
   &:hover {
-    color: $green;
-    opacity: 0.8;
+    // opacity: 0.8;
     text-decoration: underline;
   }
 }
@@ -504,14 +494,10 @@ h2 {
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
 .main {
-	font-family: 'Noto Sans', sans-serif;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  // min-height: 100dvh;
-  width: 80%;
-  margin: 0 auto;
+  flex-direction: column;
+
+  margin: 2rem;
 
   @include media("<desktop") {
     flex-direction: column;
@@ -520,16 +506,11 @@ h2 {
 }
 
 .copy {
-  font-size: clamp(24px, calc(14.40px + 2.00vw), 40px);
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.2;
-  flex: 1;
   margin-bottom: 3rem;
-
-  @include media(">desktop") {
-    margin-right: 5rem;
-    margin-bottom: 0;
-  }
+  width: 100%;
 
   span {
     color: #fff;
@@ -542,7 +523,7 @@ h2 {
       content: attr(data-value);
       will-change: clip-path;
       color: #fff;
-      background-color: #DA0055;
+      background-color: grey;
       text-align: center;
       position: absolute;
       height: 100%;
@@ -565,17 +546,18 @@ h2 {
 }
 
 a.link {
-  color: #fff;
+  color: white;
   text-decoration: none;
-  font-weight: 700;
-  background-color: #1f1f1f;
-  border-radius: 1rem;
-  padding: 0.5rem 1rem;
-  transition: all 0.5s ease-in-out;
-  font-size: 16px;
+  // font-weight: 700;
+  // background-color: #1f1f1f;
+  // border-radius: 1rem;
+  // padding: 0.5rem 1rem;
+  // transition: all 0.5s ease-in-out;
+  font-size: 14px;
 
   &:hover {
-    background-color: #ff0055;
+    // background-color: white;
+    text-decoration: underline;
   }
 }
 
@@ -583,7 +565,7 @@ a.link {
   display: flex;
   justify-content: left;
   width: 100%;
-  margin-top: 2rem;
+  margin-top: .5rem;
   pointer-events: all;
 
   @include media("<desktop") {
@@ -599,7 +581,6 @@ a.link {
     }
 
     @include media("<desktop") {
-
       margin-left: 0;
       height: 50px;
     }
@@ -626,21 +607,18 @@ small.hello {
 }
 
 .main-container {
-  position: absolute;
-  top: 0;
-  color: #ffffff;
+  color: grey;
   pointer-events: none;
 
   @include media("<desktop") {
-    padding: 5rem 0;
+    // padding: 2rem 0;
   }
 }
 
 .latest-work {
-  font-size: 16px;
+  font-size: 14px;
   pointer-events: all;
   width: 100%;
-  flex: 1;
 
   span {
     color: grey;
@@ -648,12 +626,17 @@ small.hello {
     font-style: italic;
   }
 
-  h3 {
-    font-weight: 700;
-  }
-
   article {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+
+    ul {
+      margin-top: .5rem;
+    }
+
+    .external-link {
+      display: inline-block;
+      transform: scaleX(-1);
+    }
   }
 }
 
@@ -688,7 +671,7 @@ small.hello {
 }
 
 .txt-desc {
-  color: darkgray;
+  color: grey;
   font-weight: 100;
   font-size: 14px;
 }
