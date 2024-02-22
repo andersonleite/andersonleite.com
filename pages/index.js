@@ -31,7 +31,7 @@ export default function LabPage() {
                           <a href="https://www.apple.com/jp/today" target='blank'>Today at Apple</a>
                           <span className='external-link'>⎋</span>
                           <br />
-                          Technical Lead, architecture and development. Created React components, animations, and interactions. Integrations with Apple's Retails systems, like calendars, schedules, Apple signin.
+                          Technical Lead, architecture and development. Created React components, animations, and interactions. Integrations with Apple's Retails systems, calendars, schedules, Apple signin.
                           <br />
                           React, Redux, Webpack, Apple infrastructure. System architecture highly influenced by the Isomorphic Web Applications book.
                           <br /><br />
