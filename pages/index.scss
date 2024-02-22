@@ -635,10 +635,8 @@ small.hello {
   }
 
   article {
-    margin-bottom: 2rem;
-
     ul {
-      margin-top: .5rem;
+      margin-top: 1rem;
     }
 
   }
@@ -689,4 +687,13 @@ small.hello {
 .no-link {
   color: white;
   display: inline;
+}
+
+.heading {
+  border-bottom: 1px solid grey;
+  width: 151px;
+
+  &-short {
+    width: 111px;
+  }
 }
