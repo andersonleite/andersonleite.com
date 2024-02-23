@@ -9,7 +9,7 @@ export default function LabPage() {
           <div className="copy">
             Hello! <br />
             {/* <span data-value="Anderson Leite">Anderson Leite</span> */}
-            My name is Anderson Leite, a Web Engineer with experience as a Senior Frontend Developer and Technology Lead.<br />
+            My name is <span data-value="Anderson Leite">Anderson Leite</span>, a Web Engineer with experience as a Senior Frontend Developer and Technology Lead.<br />
             I have a degree in Software Engineering and an MBA in Digital Marketing.
             <p className='copy-link'>
               <a className='link' href="https://www.linkedin.com/in/leiteanderson/" target="_blank">LinkedIn</a>
