@@ -19,41 +19,14 @@ export default function LabPage() {
           </div>
 
         <div className="latest-work">
-          <h3 className='heading'>Professional Experience</h3>
+          <h3 className='heading'>// Professional Experience</h3>
           <br />
           <section>
-              <article>
-                  <h3>|| Sr. Frontend Developer at Apple</h3>
-                  <span>|| San Francisco (USA)</span>
-                  <ul>
-                      <li>
-                        <div className="txt-desc">
-                          <a href="https://www.apple.com/jp/today" target='blank'>Today at Apple</a>
-                          <span className='external-link'>⎋</span>
-                          <br />
-                          Technical Lead, architecture and development. Created React components, animations, and interactions. Integrations with Apple's Retails systems, calendars, schedules, Apple signin.
-                          <br />
-                          React, Redux, Webpack, Apple infrastructure. System architecture highly influenced by the Isomorphic Web Applications book.
-                          <br /><br />
-                        </div>
-                      </li>
-                      <li>
-                        <div className="txt-desc">
-                          <a href="https://www.apple.com/retail/instore-shopping-session/" target='blank'>Shop with a specialist</a>
-                          <span className='external-link'>⎋</span>
-                          <br />
-                          Technical Lead, architecture and development. First Next.js project at Apple. Projects facilitates retail by organizing customer's visits to the stores.
-                          <br />
-                          Next.js, React.
-                          <br /><br />
-                        </div>
-                      </li>
-                  </ul>
-              </article>
 
               <article>
                   <h3>|| Technology Lead at R/GA</h3>
                   <span>|| Tokyo (Japan), San Francisco (USA) and São Paulo (Brazil)</span>
+                  <hr />
                   <ul>
                     <li>
                       <div className="txt-desc">
@@ -246,7 +219,37 @@ export default function LabPage() {
               </article>
 
               <article>
-                  <h3 className='heading heading-short'>Personal Projects</h3>
+                  <h3>|| Sr. Frontend Developer at Apple</h3>
+                  <span>|| San Francisco (USA)</span>
+                  <hr />
+                  <ul>
+                      <li>
+                        <div className="txt-desc">
+                          <a href="https://www.apple.com/jp/today" target='blank'>Today at Apple</a>
+                          <span className='external-link'>⎋</span>
+                          <br />
+                          Technical Lead, architecture and development. Created React components, animations, and interactions. Integrations with Apple's Retails systems, calendars, schedules, Apple signin.
+                          <br />
+                          React, Redux, Webpack, Apple infrastructure. System architecture highly influenced by the Isomorphic Web Applications book.
+                          <br /><br />
+                        </div>
+                      </li>
+                      <li>
+                        <div className="txt-desc">
+                          <a href="https://www.apple.com/retail/instore-shopping-session/" target='blank'>Shop with a specialist</a>
+                          <span className='external-link'>⎋</span>
+                          <br />
+                          Technical Lead, architecture and development. First Next.js project at Apple. Projects facilitates retail by organizing customer's visits to the stores.
+                          <br />
+                          Next.js, React.
+                          <br /><br />
+                        </div>
+                      </li>
+                  </ul>
+              </article>
+
+              <article>
+                  <h3 className='heading heading-short'>// Personal Projects</h3>
 
                   <br />
                   <div className="txt-desc">Projects involved experimenting with different technologies like WebGL, shaders, Vite.</div>
