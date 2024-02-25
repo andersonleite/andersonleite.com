@@ -729,6 +729,10 @@ hr {
   .copy {
     font-size: 1.5rem;
 
+    .name {
+      color: white;
+    }
+
     @include media("<desktop") {
       font-size: 1.5rem;
     }
