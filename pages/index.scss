@@ -718,12 +718,14 @@ hr {
   pointer-events: all;
   padding: 0 2rem;
   color: grey;
-  max-width: 80%;
+  width: 80%;
+  max-width: 1000px;
+
   margin: 0 auto;
 
   @include media("<desktop") {
     padding: 0;
-    max-width: initial;
+    width: initial;
   }
 
   .copy {
