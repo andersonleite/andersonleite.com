@@ -706,3 +706,67 @@ hr {
   margin: 1em 0;
   padding: 0;
 }
+
+
+
+.main-container-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  pointer-events: all;
+  padding: 0 2rem;
+  color: grey;
+  max-width: 80%;
+  margin: 0 auto;
+
+  @include media("<desktop") {
+    padding: 0;
+    max-width: initial;
+  }
+
+  .copy {
+    font-size: 1.5rem;
+
+    @include media("<desktop") {
+      font-size: 1.5rem;
+    }
+
+    span {
+      color: red;
+      position: relative;
+      display: inline-flex;
+      padding: 0 .5rem;
+      will-change: clip-path;
+
+      &:before {
+        content: attr(data-value);
+        will-change: clip-path;
+        color: black;
+        background-color: red;
+        text-align: center;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        animation: fadeIn 2s ease-in-out forwards;
+      }
+    }
+    @keyframes fadeIn{
+      0% {
+        opacity:0;
+      }
+      100% {
+        opacity:1;
+      }
+    }
+  }
+
+  .square {
+    width: 20px;
+    height: 20px;
+    background-color: grey;
+  }
+}
